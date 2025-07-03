@@ -1,0 +1,10 @@
+{% extends 'attendance/base.html' %}
+
+{% block content %}
+  <h2>Удалить урок "{{ lesson.topic }}"?</h2>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Подтвердить удаление</button>
+    <a href="{% url 'lesson_list' %}">Отмена</a>
+  </form>
+{% endblock %}
